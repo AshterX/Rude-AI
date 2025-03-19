@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #e7ecefff; /* Antiflash White */
+    color: #272932ff; /* Raisin Black */
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Headings use Baloo 2 */
+h1 {
+    font-family: "Baloo 2", cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #f05d5eff; /* Bittersweet */
+    padding: 4px 8px;
+    color: white;
+    border: 2px solid black;
+    outline: 2px solid white;
+    border-radius: 8px;
+    scale: 1.2;
+    cursor: pointer;
+    font-family: "Quicksand", sans-serif;
+}
+
+button:hover {
+    background-color: #0f7173ff; /* Caribbean Current */
+    transform: scale(1.05);
+}
+
+/* Update existing chatbox styling */
+.chatbox {
+    background-color: #fff;
+    height: 85vh;
+    width: 80vw;
+    max-width: 1200px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px auto;
+}
+
+.texts {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Update existing chat bubble styles */
+.chat-bubble {
+    max-width: 80%;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+.chat-bubble.self {
+    background-color: #f05d5eff; /* Bittersweet */
+    color: white;
+    align-self: flex-end;
+    font-family: "Quicksand", sans-serif;
+}
+
+.chat-bubble.bot {
+    background-color: #d8a47fff; /* Buff */
+    color: #272932ff;
+    align-self: flex-start;
+    font-family: "Poppins", sans-serif;
+}
+
+.chat-bubble.typing {
+    background-color: #d8a47fff;
+    color: #272932ff;
+    align-self: flex-start;
+    font-family: "Poppins", sans-serif;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Input field and send button container */
+.input-container {
+    display: flex;
+    gap: 10px;
+}
+
+/* Add styles for think blocks */
+.think-block {
+    font-style: italic;
+    color: #666;
+    background-color: #f5f5f5;
+    border-left: 3px solid #d8a47fff;
+    padding: 10px 15px;
+    margin: 5px 0;
+    font-size: 0.9em;
+    display: none; /* Hide think blocks by default */
+}
+
+/* Add debug mode to show think blocks */
+.debug-mode .think-block {
+    display: block;
+}
+
+textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    resize: none;
+    min-height: 60px;
+    max-height: 150px;
+    padding: 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#sendButton {
+    background: #f05d5eff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-family: "Quicksand", sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#sendButton:hover {
+    background-color: #0f7173ff;
+    transform: scale(1.05);
+}
+
+/* Add to your existing CSS */
+#clearButton {
+    margin-bottom: 10px;
+    background: #272932ff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-family: "Quicksand", sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    align-self: flex-end;
+}
+
+#clearButton:hover {
+    background-color: #f05d5eff;
+    transform: scale(1.05);
+}
+
+/* Make the interface more responsive */
+@media (max-width: 768px) {
+    .chatbox {
+        width: 95vw;
+        height: 90vh;
+    }
+}
